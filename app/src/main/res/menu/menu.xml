@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/mu_SignOut"
+        android:title="Sign Out"
+        app:showAsAction="always"
+        android:icon="@drawable/logout">
+    </item>
+
+    <item
+        android:id="@+id/mu_Settings"
+        android:title="Settings"
+        app:showAsAction="collapseActionView"
+        android:icon="@drawable/settings">
+
+    </item>
+
+</menu>

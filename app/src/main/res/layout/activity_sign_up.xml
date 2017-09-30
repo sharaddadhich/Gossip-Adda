@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.manoj.chatappusingfirebase.LoginActivity">
+
+    <TextView
+        android:id="@+id/tv_LoginActivity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Please SignUp To Continue"
+        android:textSize="20sp"
+        android:gravity="center"
+        />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp" />
+
+    <EditText
+        android:id="@+id/et_SignInEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:hint="E-mail"
+        android:textColor="@android:color/holo_blue_light" />
+
+    <EditText
+        android:id="@+id/et_SignInPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="25dp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/btn_SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Sign Up"
+        />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/tv_ExistingUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Existing User? Login "
+        android:textColor="@android:color/holo_blue_dark"
+        android:gravity="center"/>
+
+
+
+</LinearLayout>

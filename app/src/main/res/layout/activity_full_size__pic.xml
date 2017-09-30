@@ -1,0 +1,32 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@android:color/black"
+    tools:context="com.example.manoj.chatappusingfirebase.FullSize_PicActivity">
+
+    <TextView
+        android:id="@+id/tv_FullSizeUSername"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".15"
+        android:textSize="20sp"
+        android:text="Hello"
+        android:textColor="@android:color/white"
+        android:gravity="center_vertical"
+        android:paddingLeft="10dp"/>
+
+
+    <ImageView
+        android:id="@+id/iv_FullSize"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+    <android.support.v4.widget.Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight=".10"/>
+
+
+</LinearLayout>
