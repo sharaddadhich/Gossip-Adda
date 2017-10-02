@@ -66,9 +66,10 @@ public class Users_Display_For_Chat_Activity extends AppCompatActivity {
 
         rvadapter = new UsersDispalyActivtyRecyclerViewAdapter(this, users, new OnUserClickListner() {
             @Override
-            public void onUserClicked(String uid) {
-                Intent chat = new Intent(Users_Display_For_Chat_Activity.this,ChatActivity.class);
-                chat.putExtra("uid",uid);
+            public void onUserClicked(String uid, String Username) {
+                Intent chat = new Intent(Users_Display_For_Chat_Activity.this, ChatActivity.class);
+                chat.putExtra("uid", uid);
+                chat.putExtra("Username", Username);
                 startActivity(chat);
             }
         },

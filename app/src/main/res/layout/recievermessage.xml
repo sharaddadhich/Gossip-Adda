@@ -8,6 +8,7 @@
     android:paddingLeft="10dp"
     android:layout_gravity="left"
     android:maxWidth="150sp"
+    android:layout_margin="5dp"
     >
     <LinearLayout
         android:orientation="horizontal"

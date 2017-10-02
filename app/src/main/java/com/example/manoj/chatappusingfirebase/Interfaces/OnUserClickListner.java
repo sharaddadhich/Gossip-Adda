@@ -6,5 +6,5 @@ package com.example.manoj.chatappusingfirebase.Interfaces;
 
 public interface OnUserClickListner {
 
-    void onUserClicked(String uid);
+    void onUserClicked(String uid,String Username);
 }

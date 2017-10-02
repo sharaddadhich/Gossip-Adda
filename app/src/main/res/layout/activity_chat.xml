@@ -6,6 +6,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/darker_gray"
     tools:context="com.example.manoj.chatappusingfirebase.ChatActivity">
 
     <android.support.v7.widget.RecyclerView
@@ -23,16 +24,31 @@
         android:layout_height="wrap_content"
         android:layout_weight=".02"
         android:orientation="horizontal"
+        android:background="@android:color/white"
         >
 
+        <ImageButton
+            android:id="@+id/ibtn_SendImage"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".15"
+            android:layout_gravity="bottom"
+            android:background="@drawable/sendimage"
+            />
+
         <EditText
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:id="@+id/et_Message"
             android:hint="Message"
+            android:textSize="16sp"
             android:paddingLeft="10dp"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_weight=".85"
+            android:layout_weight=".7"
             />
+
+
 
         <ImageButton
             android:id="@+id/ibtn_SendMessage"

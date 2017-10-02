@@ -6,8 +6,13 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
+import com.example.manoj.chatappusingfirebase.Interfaces.OnChatPicClickListner;
+import com.example.manoj.chatappusingfirebase.Interfaces.OnProfilePicClickListner;
 import com.example.manoj.chatappusingfirebase.POJO.ChatMessage;
 import com.example.manoj.chatappusingfirebase.R;
 import java.util.ArrayList;
@@ -20,10 +25,12 @@ public class ChatDispalyAdapterRecyclerView extends RecyclerView.Adapter<ChatDis
 
     Context context;
     ArrayList<ChatMessage> chat;
+    OnChatPicClickListner onChatPicClickListner;
 
-    public ChatDispalyAdapterRecyclerView(Context context, ArrayList<ChatMessage> chat) {
+    public ChatDispalyAdapterRecyclerView(Context context, ArrayList<ChatMessage> chat, OnChatPicClickListner onChatPicClickListner) {
         this.context = context;
         this.chat = chat;
+        this.onChatPicClickListner = onChatPicClickListner;
     }
 
     @Override
@@ -59,6 +66,10 @@ public class ChatDispalyAdapterRecyclerView extends RecyclerView.Adapter<ChatDis
         {
             thisView = li.inflate(R.layout.recievermessage,parent,false);
         }
+        else if(viewType==2)
+        {
+            thisView = li.inflate(R.layout.chatimagelayout,parent,false);
+        }
 
 
         return new ChatViewHolder(thisView);
@@ -66,8 +77,37 @@ public class ChatDispalyAdapterRecyclerView extends RecyclerView.Adapter<ChatDis
 
     @Override
     public void onBindViewHolder(ChatViewHolder holder, int position) {
-        ChatMessage thisMessage = chat.get(position);
-        holder.tvMessage.setText(thisMessage.getMessage().substring(0,thisMessage.getMessage().length()-2));
+        final ChatMessage thisMessage = chat.get(position);
+        if(thisMessage.getPicurl()==null)
+        {
+            holder.tvMessage.setText(thisMessage.getMessage().substring(0,thisMessage.getMessage().length()-2));
+        }
+        else
+        {
+            if(thisMessage.getPicurl().charAt(thisMessage.getPicurl().length()-1)=='s')
+            {
+                holder.ivRecievedImage.setVisibility(View.INVISIBLE);
+                Glide.with(context).load(thisMessage.getPicurl().substring(0,thisMessage.getPicurl().length()-2)).into(holder.ivSentImage);
+                holder.ivSentImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onChatPicClickListner.onPicClicked(thisMessage.getPicurl().substring(0,thisMessage.getPicurl().length()-2));
+                    }
+                });
+            }
+            else
+            {
+                holder.ivSentImage.setVisibility(View.INVISIBLE);
+                Glide.with(context).load(thisMessage.getPicurl().substring(0,thisMessage.getPicurl().length()-2)).into(holder.ivRecievedImage);
+                holder.ivRecievedImage.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        onChatPicClickListner.onPicClicked(thisMessage.getPicurl().substring(0,thisMessage.getPicurl().length()-2));
+                    }
+                });
+            }
+        }
+
     }
 
     @Override
@@ -83,11 +123,14 @@ public class ChatDispalyAdapterRecyclerView extends RecyclerView.Adapter<ChatDis
 
     class ChatViewHolder extends RecyclerView.ViewHolder {
 
+        ImageView ivSentImage,ivRecievedImage;
         TextView tvMessage;
         LinearLayout llsender;
 
         public ChatViewHolder(View itemView) {
             super(itemView);
+            ivSentImage = (ImageView) itemView.findViewById(R.id.iv_sentImage);
+            ivRecievedImage = (ImageView) itemView.findViewById(R.id.iv_recievedImage);
             llsender = (LinearLayout) itemView.findViewById(R.id.ll_sender);
             tvMessage = (TextView) itemView.findViewById(R.id.tv_Message);
         }

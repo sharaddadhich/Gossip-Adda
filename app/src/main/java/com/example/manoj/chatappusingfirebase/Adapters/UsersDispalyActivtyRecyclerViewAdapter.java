@@ -65,7 +65,7 @@ public class UsersDispalyActivtyRecyclerViewAdapter extends
         holder.thisView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onUserClickListner.onUserClicked(thisUser.getId());
+                onUserClickListner.onUserClicked(thisUser.getId(),thisUser.getName());
             }
         });
 ;

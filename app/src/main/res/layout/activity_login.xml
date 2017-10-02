@@ -11,7 +11,7 @@
         android:id="@+id/tv_LoginActivity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Cypher Chat"
+        android:text="Gossip Adda"
         android:textSize="60sp"
         android:gravity="center"
         android:fontFamily="cursive"
@@ -22,6 +22,12 @@
         android:layout_width="match_parent"
         android:layout_height="30dp" />
 
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+
     <EditText
         android:id="@+id/et_LoginEmail"
         android:layout_width="match_parent"
@@ -30,6 +36,12 @@
         android:hint="E-mail"
         android:textColor="@android:color/holo_blue_light" />
 
+    </android.support.design.widget.TextInputLayout>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        >
     <EditText
         android:id="@+id/et_LoginPassword"
         android:layout_width="match_parent"
@@ -38,12 +50,15 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
+    </android.support.design.widget.TextInputLayout>
     <Button
         android:id="@+id/btn_Login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:text="Login"
+        android:textColor="@android:color/white"
+        android:background="@color/colorPrimary"
         />
 <Space
     android:layout_width="match_parent"

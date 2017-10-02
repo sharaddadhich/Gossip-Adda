@@ -20,21 +20,40 @@
         android:layout_width="match_parent"
         android:layout_height="30dp" />
 
-    <EditText
-        android:id="@+id/et_SignInEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:hint="E-mail"
-        android:textColor="@android:color/holo_blue_light" />
 
-    <EditText
-        android:id="@+id/et_SignInPassword"
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/et_SignInEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="E-mail"
+            android:textColor="@android:color/holo_blue_light" />
+
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="25dp"
-        android:hint="Password"
-        android:inputType="textPassword" />
+        app:passwordToggleEnabled="true"
+        >
+
+        <EditText
+            android:id="@+id/et_SignInPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="25dp"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
 
     <Button
         android:id="@+id/btn_SignUp"

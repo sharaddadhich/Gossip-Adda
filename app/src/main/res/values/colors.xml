@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimary">#4CAF50</color>
+    <color name="colorPrimaryDark">#A5D6A7</color>
     <color name="colorAccent">#FF4081</color>
     <color name="displaychat">#CE93D8</color>
     <color name="backgroundchat">#FDD835</color>
-    <color name="colorforback">#F4511E</color>
+    <color name="colorforback">#B2DFDB</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <color name="splashcolor">#6A1B9A</color>
 </resources>

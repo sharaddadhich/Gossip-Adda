@@ -9,12 +9,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:background="@color/backgroundchat">
+        android:background="@color/colorPrimaryDark">
 
         <ImageView
             android:id="@+id/iv_ChatUserImage"
             android:layout_width="60dp"
-            android:layout_height="60dp"/>
+            android:layout_height="60dp"
+            android:background="@drawable/imageviewbackground"
+            />
 
         <TextView
             android:id="@+id/tv_ChatUserName"
@@ -22,15 +24,12 @@
             android:layout_height="60dp"
             android:textSize="20sp"
             android:hint="Username"
+            android:textColor="@android:color/white"
             android:gravity="center" />
 
     </LinearLayout>
     <android.support.v4.widget.Space
         android:layout_width="match_parent"
         android:layout_height="3dp" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@color/displaychat"/>
 
 </LinearLayout>
