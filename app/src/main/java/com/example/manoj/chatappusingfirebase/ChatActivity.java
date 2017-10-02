@@ -60,6 +60,7 @@ public class ChatActivity extends AppCompatActivity {
 
         uid = getIntent().getStringExtra("uid");
         Username = getIntent().getStringExtra("Username");
+        getSupportActionBar().setTitle(Username);
         Log.d("345345", "onCreate: firebaeid" + firebaseAuth.getCurrentUser().getUid().toString());
         databaseReference1 = firebaseDatabase.getReference().child("Messages").child(firebaseAuth.getCurrentUser().getUid().toString()+uid);
         databaseReference2 = firebaseDatabase.getReference().child("Messages").child(uid+firebaseAuth.getCurrentUser().getUid().toString());
